@@ -3,7 +3,6 @@ import alanaEatsLogo from './assets/sb-burger.jpg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
