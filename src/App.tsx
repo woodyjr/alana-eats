@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import alanaEatsLogo from './assets/sb-burger.jpg'
 import './App.css'
 
