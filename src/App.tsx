@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import alanaEatsLogo from './assets/sb-burger.jpg'
 import './App.css'
 
 function App() {
@@ -8,26 +7,18 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <header className="header">
+        <h1>Alana Eats</h1>
+      </header>
+      <div className="profile-block">
+        <img src={alanaEatsLogo} alt="Alana Eats Logo" className="profile-picture" />
+        <div className="description">
+          <p>Welcome to Alana Eats! I'm Alana, a registered dietitian with a passion for all things food. I earned my undergraduate degree from Miami University (Oxford) and completed my graduate studies at the University of Dayton, where I became a registered dietitian. Here, you'll find my latest culinary adventures, nutritious recipes, and honest food reviews. My goal is to inspire healthy and delicious eating, whether you're cooking at home or exploring new flavors. Follow me on Instagram for more updates and mouthwatering content!</p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <iframe src="//lightwidget.com/widgets/cd3ea4bb2dfa5a0da901d90efd05c1fe.html" allowTransparency={true} className="lightwidget-widget" style={{ width: '100%', border: 0, overflow: 'hidden' }}></iframe>
+
+      <p>Check out my latest posts and follow me on IG for more updates!</p>
     </>
   )
 }
