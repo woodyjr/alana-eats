@@ -77,7 +77,7 @@ function PublicSite() {
           <div className="about-me">
             <h2 className="section-title">About Me</h2>
             <div className="profile-block">
-              <img src="/src/assets/sb-burger.jpg" alt="Profile" className="profile-picture" />
+              <img src="../assets/sb-burger.jpg" alt="Profile" className="profile-picture" />
               <div className="description">
                 <p>Hi! I'm Alana, a passionate food enthusiast and Registered Dietitian dedicated to making healthy eating both delicious and accessible. With years of experience in nutrition and cooking, I share my knowledge through recipes, Instagram posts, and cooking tips.</p>
                 <p>My mission is to inspire others to embrace a healthy lifestyle without compromising on taste. Through my platform, I aim to show that nutritious food can be both satisfying and enjoyable.</p>
@@ -88,7 +88,7 @@ function PublicSite() {
             <h2 className="section-title">Latest Instagram Posts</h2>
             {loading ? (
               <div className="loading-indicator">
-                <img src="/src/assets/avo.svg" alt="Loading..." className="spinning-icon" />
+                <img src="../assets/avo.svg" alt="Loading..." className="spinning-icon" />
                 <p>{randomTip}</p>
               </div>
             ) : (
