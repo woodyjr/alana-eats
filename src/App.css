@@ -1,26 +1,409 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2ecc71;
+  --secondary-color: #27ae60;
+  --accent-color: #f1c40f;
+  --text-color: #2c3e50;
+  --light-bg: #f9f9f9;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-medium: #e0e0e0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--light-bg);
+}
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes logo-spin {
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 0 2rem;
+  margin-top: 0;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Main Content Sections */
+.section {
+  padding: 5rem 2rem;
+  background: var(--white);
+}
+
+.section:nth-child(even) {
+  background: var(--gray-light);
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Profile Section */
+.profile-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 15px;
+  max-width: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.description {
+  text-align: left;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Recipe Grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.recipe-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.recipe-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.recipe-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.certification-badge {
+  background: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certification-badge i {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/* Instagram Section */
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 16px;
+  position: relative; /* Ensure grid items respect stacking context */
+  z-index: 0; /* Set a base z-index for the grid */
+}
+
+.instagram-post {
+  position: relative; /* Establish stacking context for each post */
+  overflow: hidden; /* Ensure the caption stays within the post bounds */
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Ensure square posts */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.instagram-post:hover {
+  transform: scale(1.05);
+}
+
+.instagram-post-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.instagram-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.instagram-post-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Cover the entire image */
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  color: #fff;
+  text-align: left;
+  padding: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto; /* Enable scrolling for long content */
+  border-radius: 8px; /* Match the post's border radius */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.instagram-post:hover .instagram-post-caption {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional: Add a scrollbar style for better appearance */
+.instagram-post-caption::-webkit-scrollbar {
+  width: 6px;
+}
+
+.instagram-post-caption::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.instagram-post-caption::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.view-more-button {
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-more-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+  background: var(--text-color);
+  color: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-block {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #about-instagram {
+    flex-direction: column;
+  }
+
+  .about-me, .instagram-posts {
+    flex: 1 1 100%; /* Stack sections on smaller screens */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section, .hero-content, .profile-block {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust height as needed */
+}
+
+.spinning-icon {
+  animation: spin 1s linear infinite;
+  width: 40px; /* Adjust width for smaller size */
+  height: 40px; /* Adjust height for smaller size */
+  margin-bottom: 10px; /* Add spacing between icon and text */
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -29,51 +412,28 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.header {
-  background-color: #f8b400;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2.5em;
-}
-
-.profile-block {
+#about-instagram {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.combined-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.about-me, .instagram-posts {
+  flex: 1 1 45%; /* Each section takes up 45% of the width */
+  min-width: 300px; /* Ensure sections don't shrink too much */
+}
+
+.about-me .profile-block {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin: 20px 0;
-}
-
-.profile-picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
-.description {
-  max-width: 600px;
-}
-
-.lightwidget-widget {
-  margin-top: 20px;
+  text-align: center;
 }
