@@ -9,7 +9,7 @@ function PublicSite() {
   const [instagramPosts, setInstagramPosts] = useState<{ id: string; media_url: string; permalink: string; caption: string; media_type: string; thumbnail_url?: string }[]>([]);
   const [visiblePosts, setVisiblePosts] = useState(12);
   const [loading, setLoading] = useState(true); // Track loading state
-  const INSTAGRAM_API_TOKEN = import.meta.env.VITE_INSTAGRAM_API_TOKEN || ''; // Use VITE_ prefix for Vite
+  const INSTAGRAM_API_TOKEN = import.meta.env.VITE_INSTAGRAM_API_TOKEN || '';
 
   const nutritionTips = [
     "Drink plenty of water to stay hydrated.",
@@ -79,7 +79,7 @@ function PublicSite() {
             <div className="profile-block">
               <img src="../assets/sb-burger.jpg" alt="Profile" className="profile-picture" />
               <div className="description">
-                <p>Hi! I'm Alana, a passionate food enthusiast and Registered Dietitian dedicated to making healthy eating both delicious and accessible. With years of experience in nutrition and cooking, I share my knowledge through recipes, Instagram posts, and cooking tips.</p>
+                <p>Hi, I’m Alana! I’m a Registered Dietitian and food enthusiast dedicated to making healthy eating both delicious and accessible. With years of experience in nutrition and cooking, I share my knowledge through recipes, Instagram posts, and cooking tips.</p>
                 <p>My mission is to inspire others to embrace a healthy lifestyle without compromising on taste. Through my platform, I aim to show that nutritious food can be both satisfying and enjoyable.</p>
               </div>
             </div>
